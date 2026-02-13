@@ -1,0 +1,239 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  overflow-x: hidden;
+  background: #ff6fa5;
+  color: #fff;
+}
+
+/* ===== Background ===== */
+
+.bg-gradient {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, #ffb3d9, #ff6fa5, #e91e63);
+  z-index: -3;
+}
+
+.bg-shapes .shape {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: .4;
+  z-index: -2;
+}
+
+.shape-1 { width:300px;height:300px;background:#ff80ab;top:10%;left:10%; }
+.shape-2 { width:400px;height:400px;background:#f06292;bottom:10%;right:10%; }
+.shape-3 { width:250px;height:250px;background:#ff4081;top:50%;left:40%; }
+.shape-4 { width:200px;height:200px;background:#f48fb1;bottom:30%;left:20%; }
+
+canvas {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+/* ===== Pages ===== */
+
+.page {
+  display: none;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.page.active {
+  display: flex;
+}
+
+.page-content {
+  width: 100%;
+  max-width: 500px;
+}
+
+/* ===== Glass Card ===== */
+
+.glass-card {
+  position: relative;
+  padding: 40px 25px;
+  border-radius: 25px;
+  backdrop-filter: blur(20px);
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+.card-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 25px;
+  background: linear-gradient(45deg,#ff80ab,#ff4081);
+  opacity: .15;
+  z-index: -1;
+}
+
+/* ===== Titles ===== */
+
+.title-main,
+.title-cursive {
+  font-family: 'Dancing Script', cursive;
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  margin-bottom: 25px;
+}
+
+/* ===== Buttons ===== */
+
+.button-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  padding: 12px 22px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+  transition: .3s;
+}
+
+.btn-primary,
+.btn-yes {
+  background: linear-gradient(45deg,#ff4081,#e91e63);
+  color: #fff;
+}
+
+.btn-no {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.btn:hover {
+  transform: scale(1.08);
+}
+
+/* ===== Hidden ===== */
+
+.hidden {
+  display: none;
+}
+
+/* ===== Floating Hearts ===== */
+
+.float-heart {
+  font-size: 22px;
+  animation: float 4s infinite ease-in-out alternate;
+}
+
+@keyframes float {
+  from { transform: translateY(0px); }
+  to { transform: translateY(-10px); }
+}
+
+/* ===== Emoji Bounce ===== */
+
+.emoji-bounce {
+  font-size: 40px;
+  animation: bounce 1.2s infinite;
+}
+
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ===== Bouquet ===== */
+
+.bouquet-img {
+  width: 180px;
+  transition: .5s;
+}
+
+.bouquet-img:hover {
+  transform: scale(1.1);
+}
+
+/* ===== Photo Grid ===== */
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.photo-preview {
+  width: 100%;
+  border-radius: 15px;
+}
+
+/* ===== Envelope ===== */
+
+.envelope-wrapper {
+  text-align: center;
+  cursor: pointer;
+}
+
+.envelope {
+  width: 200px;
+  height: 130px;
+  background: #fff;
+  margin: auto;
+  position: relative;
+  border-radius: 10px;
+}
+
+.envelope-flap {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 65px;
+  background: #ff4081;
+  transform-origin: top;
+  transition: .6s;
+}
+
+.envelope.open .envelope-flap {
+  transform: rotateX(180deg);
+}
+
+.final-card {
+  margin-top: 30px;
+}
+
+/* ===== Confetti ===== */
+
+.confetti-container span {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: white;
+  animation: fall 3s linear forwards;
+}
+
+@keyframes fall {
+  to { transform: translateY(100vh) rotate(360deg); opacity:0; }
+}
